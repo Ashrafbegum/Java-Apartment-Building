@@ -48,7 +48,5 @@ public abstract class Room {
 	        this.cooling_enabled = cooling_enabled;
 	 }
 	 
-	 public String collectData() {
-		 return "ID: " + id + " Temperature: " + temperature + " Heating Enabled: " + heating_enabled + " Cooling Enabled: " + cooling_enabled;
-	 }
+	 public abstract String collectData();
 }
