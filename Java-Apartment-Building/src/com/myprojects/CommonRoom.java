@@ -2,7 +2,7 @@ package com.myprojects;
 
 public class CommonRoom extends Room{
 	private RoomType room_type;
-	CommonRoom(int id, RoomType room_type) {
+	CommonRoom(int id, RoomType room_type){
 		super(id);
 		this.room_type = room_type;
 	}
