@@ -23,6 +23,10 @@ public class Building {
 		commonRooms = new ArrayList<CommonRoom>();
 	}
 	
+	public int getSetpoint() {
+		return setpoint;
+	}
+
 	public void addRoom(Room room) {
 		if (room instanceof Apartment) {
 			apartments.add((Apartment) room);
