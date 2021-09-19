@@ -8,6 +8,6 @@ public class Apartment extends Room{
 	}
 	
 	public String collectData() {
-			 return "Apartment Details:\n ID: " + getId() + "Owner: " + owner + " Temperature: " + getTemperature() + " Heating Enabled: " + isHeatingEnabled() + " Cooling Enabled: " + isCoolingEnabled();
+		return "Apartment - ID: " + getId() + " Owner: " + owner + " Temperature: " + getTemperature() + " Heating Enabled: " + isHeatingEnabled() + " Cooling Enabled: " + isCoolingEnabled();
 	}
 }
