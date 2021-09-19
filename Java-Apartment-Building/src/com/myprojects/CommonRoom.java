@@ -8,6 +8,6 @@ public class CommonRoom extends Room{
 	}
 	
 	public String collectData() {
-		return "Common Room - ID: " + getId() + " Room Type: " + room_type + " Temperature: " + getTemperature() + " Heating Enabled: " + isHeatingEnabled() + " Cooling Enabled: " + isCoolingEnabled();
+		return "Common Room - ID: " + getId() + ", Room Type: " + room_type + ", Temperature: " + getTemperature() + ", Heating Enabled: " + isHeatingEnabled() + ", Cooling Enabled: " + isCoolingEnabled();
 	}
 }
