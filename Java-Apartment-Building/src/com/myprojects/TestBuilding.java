@@ -18,13 +18,18 @@ public class TestBuilding {
 		room1.setTemperature(27);
 		room2.setTemperature(17);
 		room3.setTemperature(30);
-		room2.setTemperature(20);
+		room4.setTemperature(20);
 
 		building.addRoom(room1);
 		building.addRoom(room2);
 		building.addRoom(room3);
 		building.addRoom(room4);
 		
+		List<Room> allRooms = building.getRooms();
+		
+		BuildingControl buildControl = new BuildingControl();
+		buildControl.setHeatCool(building, allRooms);
+				
 		Assert.assertEquals(false, room1.isHeatingEnabled());
 		Assert.assertEquals(true, room1.isCoolingEnabled());
 		
@@ -51,24 +56,29 @@ public class TestBuilding {
 		room1.setTemperature(27);
 		room2.setTemperature(17);
 		room3.setTemperature(30);
-		room2.setTemperature(20);
+		room4.setTemperature(20);
 		
 		building.addRoom(room1);
 		building.addRoom(room2);
 		building.addRoom(room3);
 		building.addRoom(room4);
 		
+	    List<Room> allRooms = building.getRooms();
+		
+		BuildingControl buildControl = new BuildingControl();
+		buildControl.setHeatCool(building, allRooms);
+			
 		String resultString1 = "Apartment - ID: 101, Owner: Ashraf, Temperature: 27, Heating Enabled: false, Cooling Enabled: true";
 		Assert.assertEquals(resultString1, room1.collectData());
 		
-		String resultString2 = "Apartment - ID: 102, Owner: Khan, Temperature:17, Heating Enabled: true, Cooling Enabled: false";
-		Assert.assertEquals(resultString2, room1.collectData());
+		String resultString2 = "Apartment - ID: 102, Owner: Khan, Temperature: 17, Heating Enabled: true, Cooling Enabled: false";
+		Assert.assertEquals(resultString2, room2.collectData());
 		
 		String resultString3 = "Common Room - ID: 201, Room Type: GYM, Temperature: 30, Heating Enabled: false, Cooling Enabled: true";
-		Assert.assertEquals(resultString3, room1.collectData());
+		Assert.assertEquals(resultString3, room3.collectData());
 		
 		String resultString4 = "Common Room - ID: 202, Room Type: LIBRARY, Temperature: 20, Heating Enabled: true, Cooling Enabled: false";
-		Assert.assertEquals(resultString4, room1.collectData());
+		Assert.assertEquals(resultString4, room4.collectData());
 	}
 	
 	@Test 
